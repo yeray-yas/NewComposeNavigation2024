@@ -11,19 +11,15 @@ import androidx.compose.ui.unit.sp
 import com.yerayyas.newcomposenavigation2024.presentation.navigation.SettingsInfo
 
 @Composable
-fun SettingsScreen(settingsInfo: SettingsInfo) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+fun SettingsScreen(settingsInfo:SettingsInfo){
+    Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.weight(1f))
         Text(text = "SETTINGS SCREEN", fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
-        Text(text = settingsInfo.name)
-        Text(text = settingsInfo.age.toString())
-        Text(text = settingsInfo.isAdult.toString())
-        Text(text = settingsInfo.darkMode.toString())
+        Text(text = "Name: ${settingsInfo.name}")
+        Text(text = "Age: ${settingsInfo.age}")
+        Text(text = "Is Adult: ${if (settingsInfo.isAdult) "Yes" else "No"}")
+        Text(text = "Dark mode: ${if (settingsInfo.darkMode) "Yes" else "No"}")
         Spacer(modifier = Modifier.weight(1f))
     }
-
 }

@@ -20,7 +20,7 @@ inline fun <reified T : Parcelable> createNavType(): NavType<T> { // Generic fun
         }
 
         override fun parseValue(value: String): T {
-            return Json.decodeFromString<T>(value)
+            return Json.decodeFromString<T>(value) // <-- TODO Deberíamos quitar la <T>? porque no lo necesitamos
         }
 
         override fun put(bundle: Bundle, key: String, value: T) {
@@ -30,6 +30,5 @@ inline fun <reified T : Parcelable> createNavType(): NavType<T> { // Generic fun
         override fun serializeAsValue(value: T): String {
             return Uri.encode(Json.encodeToString(value))
         }
-
     }
 }

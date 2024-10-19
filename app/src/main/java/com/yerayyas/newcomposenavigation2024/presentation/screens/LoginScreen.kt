@@ -22,7 +22,7 @@ fun LoginScreen(navigateToHome: () -> Unit) {
         Text(text = "LOGIN SCREEN", fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
         Button(onClick = { navigateToHome() }) {
-            Text(text = "Navigate to home")
+            Text(text = "Login")
         }
         Spacer(modifier = Modifier.weight(1f))
     }

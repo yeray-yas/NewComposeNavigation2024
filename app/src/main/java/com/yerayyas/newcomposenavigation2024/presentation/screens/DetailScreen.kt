@@ -15,7 +15,7 @@ import com.yerayyas.newcomposenavigation2024.presentation.navigation.SettingsInf
 @Composable
 fun DetailScreen(
     name: String,
-    navigateToSettings: (SettingsInfo) -> Unit,
+    navigateToSettings: () -> Unit,
     navigateBack: () -> Unit
 ) {
     Column(
@@ -23,21 +23,13 @@ fun DetailScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.weight(1f))
-        Text(text = "DETAIL SCREEN $name", fontSize = 25.sp)
+        Text(text = "DETAIL SCREEN: $name", fontSize = 25.sp)
         Spacer(modifier = Modifier.weight(1f))
-        Button(onClick = {
-            val settingsInfo = SettingsInfo(
-                name = "Yeray",
-                age = 25,
-                isAdult = true,
-                darkMode = false
-            )
-            navigateToSettings(settingsInfo)
-        }) {
-            Text(text = "Navigate to settings screen")
+        Button(onClick = { navigateToSettings() }) {
+            Text(text = "Go to Settings")
         }
         Button(onClick = { navigateBack() }) {
-            Text(text = "Log out")
+            Text(text = "Back")
         }
         Spacer(modifier = Modifier.weight(1f))
     }
